@@ -11,6 +11,9 @@ Welcome to the AI Knowledge Base.
 - [Switch Provider](ai/switch-provider) — Which layers change when switching provider
 - [Contributors](ai/contributors) — Who does what
 
+### Compression & AGI
+- [Compression = Intelligence = World Model](ai/compression-intelligence) — Shannon limit, DeepMind paper, Brain-as-Mini-Nature theory
+
 ### Hermes Agent
 - [Config Reference](hermes/config) — Hermes configuration
 - [Scripts Overview](hermes/scripts) — Cron jobs and tools
