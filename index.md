@@ -13,7 +13,3 @@ Welcome to the AI Knowledge Base.
 
 ### Compression & AGI
 - [Compression = Intelligence = World Model](ai/compression-intelligence) — Shannon limit, DeepMind paper, Brain-as-Mini-Nature theory
-
-### Hermes Agent
-- [Config Reference](hermes/config) — Hermes configuration
-- [Scripts Overview](hermes/scripts) — Cron jobs and tools
