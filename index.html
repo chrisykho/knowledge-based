@@ -1,16 +1,92 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
-<head><meta charset="utf-8"><title>AI Knowledge Base</title></head>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>🧠 AI Knowledge Base</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      background: #f5f5f5;
+      color: #333;
+      line-height: 1.6;
+    }
+    .header {
+      background: #1a1a6c;
+      color: #fff;
+      text-align: center;
+      padding: 48px 20px 36px;
+    }
+    .header h1 { font-size: 2.2rem; margin-bottom: 8px; }
+    .header p { font-size: 1rem; opacity: .85; }
+    .content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 32px 20px 60px;
+    }
+    h2 {
+      font-size: 1.3rem;
+      color: #1a1a6c;
+      border-bottom: 2px solid #1a1a6c;
+      padding-bottom: 6px;
+      margin-top: 32px;
+      margin-bottom: 16px;
+    }
+    ul { list-style: none; padding: 0; }
+    li { margin-bottom: 6px; }
+    a {
+      display: block;
+      padding: 10px 14px;
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 6px;
+      text-decoration: none;
+      color: #1a1a6c;
+      transition: background .15s, border-color .15s;
+    }
+    a:hover {
+      background: #f0f0ff;
+      border-color: #1a1a6c;
+    }
+    a .desc {
+      display: block;
+      font-size: .82rem;
+      color: #777;
+      margin-top: 2px;
+    }
+    .footer {
+      text-align: center;
+      font-size: .82rem;
+      color: #999;
+      padding: 20px;
+    }
+  </style>
+</head>
 <body>
-<h1>🧠 AI Knowledge Base</h1>
+<div class="header">
+  <h1>🧠 AI Knowledge Base</h1>
+  <p>Notes, architecture &amp; insights on AI, LLMs &amp; AGI</p>
+</div>
+<div class="content">
+
+<h2>AI Architecture</h2>
 <ul>
-<li><a href="README.md">Home</a></li>
-<li><a href="ai/llm-layers.md">LLM Architecture Layers</a></li>
-<li><a href="ai/llm-files.md">LLM Physical Deliverables</a></li>
-<li><a href="ai/workflow.md">AI Chatbot Full Workflow</a></li>
-<li><a href="ai/switch-provider.md">Switch Provider</a></li>
-<li><a href="ai/contributors.md">Contributors</a></li>
-<li><a href="ai/compression-intelligence.md">Compression = Intelligence = World Model</a></li>
+  <li><a href="ai/llm-layers.md">LLM Architecture Layers <span class="desc">Client → API Wrapper → Guardrails → Inference Engine → Weights → Output Filter</span></a></li>
+  <li><a href="ai/llm-files.md">LLM Physical Deliverables <span class="desc">What files make up a model</span></a></li>
+  <li><a href="ai/workflow.md">AI Chatbot Full Workflow <span class="desc">From your input to response</span></a></li>
+  <li><a href="ai/switch-provider.md">Switch Provider <span class="desc">Which layers change when switching provider</span></a></li>
+  <li><a href="ai/contributors.md">Contributors <span class="desc">Who does what</span></a></li>
 </ul>
+
+<h2>Compression &amp; AGI</h2>
+<ul>
+  <li><a href="ai/compression-intelligence.md">Compression = Intelligence = World Model <span class="desc">Shannon limit, DeepMind paper, Brain-as-Mini-Nature theory</span></a></li>
+</ul>
+
+</div>
+<div class="footer">
+  <p><a href="https://github.com/chrisykho/knowledge-based">GitHub</a> · Updated 2026-08-14</p>
+</div>
 </body>
 </html>
