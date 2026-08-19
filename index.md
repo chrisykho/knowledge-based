@@ -13,3 +13,4 @@ Welcome to the AI Knowledge Base.
 
 ### Compression & AGI
 - [Compression = Intelligence = World Model](ai/compression-intelligence) — Shannon limit, DeepMind paper, Brain-as-Mini-Nature theory
+- [Compression Demo — Huffman Coding & Typos](ai/compression-demo) — Concrete bitstream demo, prefix codes, typo penalty
