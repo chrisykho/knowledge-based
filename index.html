@@ -62,6 +62,20 @@
       padding: 20px;
     }
   </style>
+  <script>
+    (function() {
+      var host = window.location.hostname;
+      var isGithub = host.indexOf('github') > -1;
+      document.addEventListener('DOMContentLoaded', function() {
+        var links = document.querySelectorAll('.links a');
+        for (var i = 0; i < links.length; i++) {
+          var text = links[i].textContent;
+          if (isGithub && text.indexOf('Cloudflare') > -1) links[i].style.display = 'none';
+          if (!isGithub && text.indexOf('GitHub') > -1) links[i].style.display = 'none';
+        }
+      });
+    })();
+  </script>
 </head>
 <body>
 <div class="header">
