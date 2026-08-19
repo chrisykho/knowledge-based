@@ -34,27 +34,27 @@
       margin-bottom: 16px;
     }
     ul { list-style: none; padding: 0; }
-    li { margin-bottom: 6px; }
-    a {
-      display: block;
+    li {
+      margin-bottom: 10px;
       padding: 10px 14px;
       background: #fff;
       border: 1px solid #e0e0e0;
       border-radius: 6px;
+    }
+    li .title { font-size: 1rem; font-weight: 600; }
+    li .desc { display: block; font-size: .82rem; color: #777; margin-top: 2px; }
+    li .links { display: block; font-size: .82rem; margin-top: 4px; }
+    li .links a {
+      display: inline;
+      padding: 2px 8px;
+      background: #eef;
+      border: 1px solid #ccd;
+      border-radius: 4px;
       text-decoration: none;
       color: #1a1a6c;
-      transition: background .15s, border-color .15s;
+      font-size: .8rem;
     }
-    a:hover {
-      background: #f0f0ff;
-      border-color: #1a1a6c;
-    }
-    a .desc {
-      display: block;
-      font-size: .82rem;
-      color: #777;
-      margin-top: 2px;
-    }
+    li .links a:hover { background: #dde; }
     .footer {
       text-align: center;
       font-size: .82rem;
@@ -72,16 +72,40 @@
 
 <h2>AI Architecture</h2>
 <ul>
-  <li><a href="/ai/llm-layers.html">LLM Architecture Layers <span class="desc">Client → API Wrapper → Guardrails → Inference Engine → Weights → Output Filter</span></a></li>
-  <li><a href="/ai/llm-files.html">LLM Physical Deliverables <span class="desc">What files make up a model</span></a></li>
-  <li><a href="/ai/workflow.html">AI Chatbot Full Workflow <span class="desc">From your input to response</span></a></li>
-  <li><a href="/ai/switch-provider.html">Switch Provider <span class="desc">Which layers change when switching provider</span></a></li>
-  <li><a href="/ai/contributors.html">Contributors <span class="desc">Who does what</span></a></li>
+  <li>
+    <span class="title">LLM Architecture Layers</span>
+    <span class="desc">Client → API Wrapper → Guardrails → Inference Engine → Weights → Output Filter</span>
+    <span class="links"><a href="/ai/llm-layers.html">GitHub Pages (html)</a> <a href="/ai/llm-layers.md">Cloudflare Pages (md)</a></span>
+  </li>
+  <li>
+    <span class="title">LLM Physical Deliverables</span>
+    <span class="desc">What files make up a model</span>
+    <span class="links"><a href="/ai/llm-files.html">GitHub Pages (html)</a> <a href="/ai/llm-files.md">Cloudflare Pages (md)</a></span>
+  </li>
+  <li>
+    <span class="title">AI Chatbot Full Workflow</span>
+    <span class="desc">From your input to response</span>
+    <span class="links"><a href="/ai/workflow.html">GitHub Pages (html)</a> <a href="/ai/workflow.md">Cloudflare Pages (md)</a></span>
+  </li>
+  <li>
+    <span class="title">Switch Provider</span>
+    <span class="desc">Which layers change when switching provider</span>
+    <span class="links"><a href="/ai/switch-provider.html">GitHub Pages (html)</a> <a href="/ai/switch-provider.md">Cloudflare Pages (md)</a></span>
+  </li>
+  <li>
+    <span class="title">Contributors</span>
+    <span class="desc">Who does what</span>
+    <span class="links"><a href="/ai/contributors.html">GitHub Pages (html)</a> <a href="/ai/contributors.md">Cloudflare Pages (md)</a></span>
+  </li>
 </ul>
 
 <h2>Compression &amp; AGI</h2>
 <ul>
-  <li><a href="ai/compression-intelligence.html">Compression = Intelligence = World Model <span class="desc">Shannon limit, DeepMind paper, Brain-as-Mini-Nature theory</span></a></li>
+  <li>
+    <span class="title">Compression = Intelligence = World Model</span>
+    <span class="desc">Shannon limit, DeepMind paper, Brain-as-Mini-Nature theory</span>
+    <span class="links"><a href="/ai/compression-intelligence.html">GitHub Pages (html)</a> <a href="/ai/compression-intelligence.md">Cloudflare Pages (md)</a></span>
+  </li>
 </ul>
 
 </div>
