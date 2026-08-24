@@ -117,3 +117,65 @@ This will give you reliable behaviour change without measurable degradation on t
 ## References
 1. Hu et al., "LoRA: Low-Rank Adaptation of Large Language Models", ICLR 2022
 2. Dettmers et al., "QLoRA: Efficient Finetuning of Quantized Language Models", NeurIPS 2023
+
+## Is LoRA Merge = Full Fine-Tune?
+
+**No, they are mathematically different.**
+
+| | Full fine-tune | LoRA merge |
+|--|---------------|------------|
+| Update formula | `W_new = W + Δ` (full rank) | `W_new = W + (α/r) × A×B` (low rank) |
+| Degrees of freedom | 4096×4096 = 16.7M | (4096×8)+(8×4096) = 65K |
+| Can move in | Any direction in 4096-dim space | Only an 8-dim subspace |
+
+**Analogy:**
+- Full fine-tune = reshape the entire clay sculpture
+- LoRA merge = add a thin texture layer on the surface. Shape stays, surface finish changes.
+
+**Practical difference:**
+- Format/style adaptation → LoRA = full fine-tune ✅
+- New knowledge injection → LoRA limited ⚠️
+- Risk of catastrophic forgetting → LoRA much lower 🟢
+- Multiple tasks stacking → LoRA allows swapping adapters ✅
+- Rollback → LoRA zero-cost (delete two small files) ✅
+
+## When Is Full Fine-Tune Actually Necessary?
+
+### 1. New Knowledge (Unseen Concepts)
+
+LoRA's low-rank constraint limits its ability to create genuinely new knowledge vectors:
+
+```
+LoRA update: moves within 8-dim subspace of 4096-dim space
+If the concept has no existing representation in the model,
+  there is nothing to "redirect" — full fine-tune is needed.
+```
+
+See [Identifying Unseen Concepts in LLMs](unseen-concepts) for how to tell if a concept is genuinely new.
+
+### 2. Safety / Guardrails
+
+Safety modifications are **adversarial** by nature:
+
+```
+Normal fine-tune: teach model to do A, not B
+                → A and B are close in knowledge space
+                → LoRA redirect works
+
+Safety tuning:     reject specific adversarial inputs
+                → these inputs are scattered across knowledge space
+                → LoRA's 8-dim subspace coverage is insufficient
+                ```
+
+Adversarial patterns are distributed across many corners of the knowledge space. A low-rank update cannot cover all of them reliably. Full fine-tune (e.g. RLHF / DPO) provides better robustness.
+
+## LoRA-First: The Industry Standard
+
+The mainstream approach today is LoRA-first:
+
+- Llama 3 official fine-tune guide recommends LoRA
+- Mistral's fine-tune tools default to LoRA
+- QLoRA enables 70B fine-tune on a single 24GB GPU
+- 90%+ of fine-tuned models on HuggingFace use LoRA
+
+**Conclusion:** For 90%+ of use cases, LoRA is sufficient. Full fine-tune is reserved for new knowledge injection, safety alignment, and fundamental reasoning improvement. Your intuition is correct — LoRA is almost always enough.
