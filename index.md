@@ -16,3 +16,4 @@ Welcome to the AI Knowledge Base.
 - [Compression Demo — Huffman Coding & Typos](ai/compression-demo) — Concrete bitstream demo, prefix codes, typo penalty
 - [LoRA Fine-Tuning — Customising LLMs](ai/lora-fine-tuning) — How LoRA updates 0.1% params without breaking original quality
 - [Identifying Unseen Concepts in LLMs](ai/unseen-concepts) — How to tell if a concept exists in the model's knowledge space
+- [LLM Security — Shared Context & Prompt Injection](ai/llm-security) — Two attack vectors, enterprise deployment risks, prevention
